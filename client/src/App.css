@@ -1,8 +1,24 @@
-
-
 body {
-  width: 50%;
   margin: 0 auto;
+  background-image: url('banner-bg.png'); /* Replace with your image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: This makes the background image fixed with regard to the viewport */
+}
+
+.app-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 70px;
+}
+
+.left-section, .right-section {
+  flex: 1;
+  padding: 1em;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.7);  /* Partial transparency */
+  border-radius: 10px;  /* Rounded corners */
 }
 
 header {
@@ -11,8 +27,9 @@ header {
 
 header h1 {
   font-size: 100px;
-  color: #2c3e50;
+  color: #f0b2cd;  /* Orange-Red */
   font-weight: 200;
+  text-shadow: 2px 2px 4px #000000;  /* Text shadow */
 }
 
 input {
@@ -25,8 +42,9 @@ input {
   padding: 5px;
 }
 
+/* Task related styles */
 .task {
-  background-color: #34495e;
+  background-color: #ffcccb;  /* Light red */
   padding: 15px;
   margin: 5px;
   overflow-x: hidden;
@@ -35,7 +53,7 @@ input {
 }
 
 .task span {
-  color: #FFFFFF;
+  color: #34495e;  /* Dark Blue-Gray */
 }
 
 .icon {
@@ -50,18 +68,19 @@ article {
 .edit-todo {
   width: 85%;
   font-size: 16px;
-  color: #FFFFFF;
+  color: #2c3e50;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid #2c3e50;
 }
 
+/* Button styles */
 .button {
   margin: 0 10px;
   padding: 10px;
   font-size: 14px;
   color: #6c6777;
-  background-color: #fff;
+  background-color: #ffb6c1;  /* Light Pink */
   border: none;
   cursor: pointer;
   width: 100px;
@@ -71,7 +90,7 @@ article {
 
 .button.selected {
   color: #FFF;
-  background-color: #6c6777;
+  background-color: #ff69b4;  /* Brighter Pink */
 }
 
 .button.clear {
@@ -79,4 +98,33 @@ article {
   color: #FFF;
   background-color: #ee1630;
   width: 170px;
+}
+
+/* Progress Bar styles */
+.progress-container {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-ring {
+  position: relative;
+}
+
+.progress-ring__circle--bg {
+  stroke: #ffffff;
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.progress-ring__text {
+  font-size: 16px;
+  fill: #ff4500;  /* Orange-Red */
 }
